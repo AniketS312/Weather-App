@@ -41,6 +41,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${lon
   day.textContent = getDay(time[0])
   getIcon(data)
   document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + cityName + "')"
+  getWeatherInfo(data);
 })
 }
 
@@ -177,7 +178,8 @@ function getIcon(input) {
   degree.innerText = Math.round(temprature) + '°';
   document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + cityName + "')"
   time.innerText = getlocalTime(data);
-    getIcon(data)
+  getIcon(data)
+  getWeatherInfo(data);
 })
 }
 
@@ -203,6 +205,7 @@ const temprature = data.main.temp - 273.15;
 degree.innerText = Math.round(temprature) + '°';
 document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + cityName + "')"
 time.innerText = getlocalTime(data);
+getWeatherInfo(data);
 })
 }
 
@@ -211,4 +214,16 @@ inputButton.addEventListener('click', searchCity)
 
 for (let i = 0; i < link.length ; i++) {
   link[i].addEventListener('click', linkSearchCity)
+}
+function getWeatherInfo(input) {
+  const humidity = document.getElementById('humidity')
+  const wind = document.getElementById('wind')
+  const country = document.getElementById('country')
+  const humidityRes = input.main.humidity;
+  const windRes = input.wind.speed * 60 * 60 / 1000
+  const windAns = Math.round(windRes);
+  const countryRes = input.sys.country
+  humidity.textContent = `${humidityRes}%`
+  wind.textContent = `${windAns} km/h`;
+  country.textContent = countryRes;
 }

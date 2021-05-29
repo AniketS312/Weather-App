@@ -93,7 +93,18 @@ body {
 }
 
 .icon {
-  padding-bottom: 1.3rem;
+  padding-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.icon img {
+  height: 50px;
+  width: 50px;
+}
+
+.icon p {
+  text-transform: capitalize;
+  letter-spacing: .05rem;
 }
 
 /* Right Section */
@@ -110,7 +121,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   padding-left: 2rem;
-  color: rgba(255,255,255, .5)
+  color: rgba(255,255,255, .5);
+  font-size: 1.2rem;
 }
 
 
@@ -124,7 +136,6 @@ body {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(255,255,255, .4);
-  font-size: 1.2rem;
   height: 70%;
   align-self: flex-end;
   margin: 0 2rem 0 2rem;
@@ -181,7 +192,6 @@ color: white;
 }
 
 .other-locations ul li {
-  font-size: 1.2rem;
   margin-bottom: 1.2rem;
 }
 
@@ -193,10 +203,26 @@ color: white;
 .weather-details {
   flex: 4;
   margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5rem;
+}
+
+.weather-details h6 {
+  justify-self:flex-start;
+  margin-bottom: 3rem;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .credits {
   flex: 1;
+  margin-left: 2rem;
 }
 
 
