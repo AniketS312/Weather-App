@@ -304,14 +304,25 @@ font-size: 1.2rem;
 .icon {
   display: none;
 }
+.credits {
+  display: none;
+}
 }
 
-@media (max-height: 412px) and (max-width: 732px)  {
+@media (max-height: 413px) and (max-width: 813px)  {
   .left-side {
     flex: 3;
   }
+
+  .icon {
+    display: none;
+  }
   .right-side {
     flex: 7;
+  }
+
+  .other-locations {
+    display: none;
   }
 
   .weather-details h6 {
