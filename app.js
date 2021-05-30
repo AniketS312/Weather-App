@@ -220,7 +220,7 @@ function getWeatherInfo(input) {
   const wind = document.getElementById('wind')
   const country = document.getElementById('country')
   const humidityRes = input.main.humidity;
-  const windRes = input.wind.speed * 60 * 60 / 1000
+  const windRes = input.wind.speed * 1.609;
   const windAns = Math.round(windRes);
   const countryRes = input.sys.country
   humidity.textContent = `${humidityRes}%`
